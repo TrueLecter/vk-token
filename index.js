@@ -17,7 +17,7 @@ function sendAuthRequest(formAction, inputs, callback){
 			}, function(error, response, body){
 			    if(error) {
 			        if (callback)
-				    	callback(error);
+				    	callback(error, null, response);
 			    } else {
 			    	//handle vk redirect
 			    	if (response.statusCode == 302){
@@ -29,7 +29,7 @@ function sendAuthRequest(formAction, inputs, callback){
 						}, function(error, response, body){
 						    if(error) {
 			        			if (callback)
-									callback(error);
+									callback(error, null, response);
 						    } else {
 						    	//console.log(JSON.stringify(response), body);
 						    	//find form with access confirmation
@@ -50,7 +50,7 @@ function sendAuthRequest(formAction, inputs, callback){
 								}, function(error, response, body){
 								    if(error) { 
 			        					if (callback)
-				    						callback(error);
+				    						callback(error, null, response);
 								    } else {
 								    	//console.log(JSON.stringify(response), body);
 								    	//parse access token
@@ -126,7 +126,7 @@ function accessToken(login, password, callback, appid, scope){
 						sendAuthRequest(formAction, inputs, callback); // make request
 				    } else {
 				    	if (callback)
-				    		callback(error);
+				    		callback(error, null, response);
 				    }
 				}
 		);

@@ -2,7 +2,7 @@
   "name": "vk-token",
   "version": "0.1.1",
   "description": "VK access token",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +11,12 @@
   "dependencies": {
     "htmlparser2": "^3.9.1",
     "request": "^2.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TrueLecter/vk-token.git"
+  },
+  "bugs": {
+    "email" : "project@hostname.com"
   }
 }
